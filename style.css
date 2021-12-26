@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: black;
+}
+.container{
+    width: 25em;
+    height: 80%;
+    overflow: hidden;
+}
+#title{
+    margin-top: 1em;
+    height: 10%;
+    width: inherit;
+    display: grid;
+    place-items: center;
+    font-size: 1.7em;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    color: white;
+}
+#content{
+    position: relative;
+    padding: 1em;
+    height: 90%;
+}
+.category{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    grid-template-rows: 1fr 3fr;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.1s;
+    background-color: black;
+    z-index: 10;
+}
+.onCategory{
+    left: -100%;
+}
+.choices>h2:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+.choices>h2{
+    color: yellow;
+}
+.choices{
+    width: inherit;
+    line-height: 3em;
+    text-align: center;
+    height: 100%;
+}
+.category>h1{
+    padding-top: 1.5em;
+    height: 100%;
+    color: darkviolet;
+}
+form>div>span{
+    font-size: 2em;
+    color: yellow;
+}
+select{
+    border-radius: 0.55em;
+    height: 2em;
+    width: 4em;
+    background-color: black;
+    color: white;
+    border: 1px solid yellow;
+}
+input[type='text']{
+    padding-left: 0.5em;
+    border-radius: 0.55em;
+    height: 2em;
+    width: 11em;
+    outline: none;
+    border: 1px solid yellow;
+    background-color: black;
+    color: white;
+}
+form{
+    height: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+form>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons>input{
+    border-radius: 1em;
+    width: 7em;
+    height: 3em;
+    color: darkviolet;
+    background-color: black;
+}
+#swap{
+    height: 3em;
+    background-color: darkviolet;
+    border-radius: 50%;
+}
+#swap:hover{
+    cursor: pointer;
+}
+#logo{
+    height: 2em;
+}
+#logo:hover{
+    cursor: pointer;
+}
+@media (max-width: 403px){
+    .container{
+        width: 20em;
+    }
+    #title>h2{
+        font-size: 1.3em;
+    }
+    input[type='text']{
+        width: 8em;
+    }
+    .category>h1{
+        font-size: 1.7em;
+    }
+}
+@media (max-width: 320px){
+    .container{
+        width: 17em;
+    }
+    #title>h2{
+        font-size: 1.1em;
+    }
+    input[type='text']{
+        width: 6em;
+    }
+    .category>h1{
+        font-size: 1.4em;
+    }
+    form>div>span{
+        font-size: 1.6em;
+    }
+}
+@media (max-width: 280px){
+    .container{
+        width: 15em;
+    }
+    #title>h2{
+        font-size: 1em;
+    }
+    input[type='text']{
+        width: 5em;
+    }
+    form>div>span{
+        font-size: 1.6em;
+    }
+    select{
+        width: 3.3em;
+    }
+}
+@media (orientation: landscape){
+    #title{
+        display: none;
+    }
+    .container{
+        width: 80%;
+    }
+    .category{
+        height: 111%;
+    }
+    .choices{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .choices>h2:nth-child(1){
+        transform: rotateZ(45deg);
+    }
+    .choices>h2:nth-child(2){
+        transform: rotateZ(10deg);
+        align-self: flex-end;
+    }
+    .choices>h2:nth-child(3){
+        transform: rotateZ(-10deg);
+        align-self: flex-end;
+    }
+    .choices>h2:nth-child(4){
+        transform: rotateZ(-45deg);
+    }
+    #swap{
+        transform: rotateZ(90deg);
+    }
+    .input{
+        width: 80%;
+    }
+    .output{
+        width: 80%;
+        justify-self: self-end;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div id="title">
+            <h2>Unit Converter</h2>
+        </div>
+        <div id="content">
+            <div class="category">
+                <h1>Choose a category:</h1>
+                <div class="choices">
+                    <h2>speed</h2>
+                    <h2>weight</h2>
+                    <h2>distance</h2>
+                    <h2>time</h2>
+                </div>
+            </div>
+            <img id="logo" src="icons/category.svg" alt="no image">
+            <form>
+                <div class="input">
+                    <span>input:</span>
+                    &nbsp;
+                    <input type="text">
+                    <select name="select-input" id="select-input"></select>
+                </div>
+                <div>
+                    <img id="swap" src="icons/swap-vertical.svg" alt="">
+                </div>
+                <div class="output">
+                    <span>output:</span>    
+                    <input id="answer" type="text" readonly>
+                    <select name="select-output" id="select-output"></select>
+                </div>
+                <div class="buttons">
+                    <input class="convert" type="button" value="convert">
+                    <input class="clear" type="reset" value="clear">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

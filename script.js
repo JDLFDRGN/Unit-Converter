@@ -7,7 +7,7 @@ let convert=document.querySelector('.convert');
 let answer=document.querySelector('#answer');
 let number=document.querySelector('input');
 let clear=document.querySelector('.clear');
-let categoryVal=0,unit=0,numberOfUnits=0,input='', output='', inputUnit, outputUnit;
+let choicesSize, categoryVal=0,unit=0,numberOfUnits=0,input='', output='', inputUnit, outputUnit;
 let createOption=[];
 let createUnit=[];
 const timeUnits=['sec','min','hr'];
@@ -34,8 +34,8 @@ choices.forEach((e,index)=>{e.addEventListener('click',()=>{
 swap.addEventListener('click',()=>{
     let select1=choose[0].selectedIndex;
     let select2=choose[1].selectedIndex;
-    createOption[select2].selected=true;
-    createOption[select1+createOption.length/2].selected=true;
+     createOption[select2].selected=true;
+     createOption[select1+(choicesSize/2)].selected=true;
 });
 
 clear.addEventListener('click',resetDisplay);
@@ -83,6 +83,7 @@ function loop(unitList=[]){
             choose[1].appendChild(createOption[i]);
             createOption[i].appendChild(createUnit[i]);
         }
+        choicesSize=noOfUnits*2;
 }
 
 function compute(){
@@ -145,5 +146,5 @@ function resetDisplay(){
     output='';
 }
 function resetCategory(){
-    for(let i=0;i<createOption.length;i++)createOption[i].remove();
+    for(let i=0;i<choicesSize;i++)createOption[i].remove();
 }
